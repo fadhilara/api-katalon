@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>default</name>
+   <tag></tag>
+   <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://api.openweathermap.org/geo/1.0/direct'</initValue>
+      <name>baseUrlCoordinate</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Jakarta Selatan'</initValue>
+      <name>country</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'4f03e47b10cdc4d6106fc12db8a0fae3'</initValue>
+      <name>appid</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>-6.28381815</initValue>
+      <name>lat</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>106.80486324917382</initValue>
+      <name>lon</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://api.openweathermap.org/data/2.5/air_pollution'</initValue>
+      <name>baseUrlPolution</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>

@@ -1,0 +1,314 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome10",
+    "definitions": {
+        "Welcome10": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "cod": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "message": {
+                    "type": "integer"
+                },
+                "cnt": {
+                    "type": "integer"
+                },
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/List"
+                    }
+                },
+                "city": {
+                    "$ref": "#/definitions/City"
+                }
+            },
+            "required": [
+                "city",
+                "cnt",
+                "cod",
+                "list",
+                "message"
+            ],
+            "title": "Welcome10"
+        },
+        "City": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "coord": {
+                    "$ref": "#/definitions/Coord"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "population": {
+                    "type": "integer"
+                },
+                "timezone": {
+                    "type": "integer"
+                },
+                "sunrise": {
+                    "type": "integer"
+                },
+                "sunset": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "coord",
+                "country",
+                "id",
+                "name",
+                "population",
+                "sunrise",
+                "sunset",
+                "timezone"
+            ],
+            "title": "City"
+        },
+        "Coord": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "lat": {
+                    "type": "number"
+                },
+                "lon": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "lat",
+                "lon"
+            ],
+            "title": "Coord"
+        },
+        "List": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "dt": {
+                    "type": "integer"
+                },
+                "main": {
+                    "$ref": "#/definitions/MainClass"
+                },
+                "weather": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Weather"
+                    }
+                },
+                "clouds": {
+                    "$ref": "#/definitions/Clouds"
+                },
+                "wind": {
+                    "$ref": "#/definitions/Wind"
+                },
+                "visibility": {
+                    "type": "integer"
+                },
+                "pop": {
+                    "type": "number"
+                },
+                "rain": {
+                    "$ref": "#/definitions/Rain"
+                },
+                "sys": {
+                    "$ref": "#/definitions/Sys"
+                },
+                "dt_txt": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            },
+            "required": [
+                "clouds",
+                "dt",
+                "dt_txt",
+                "main",
+                "pop",
+                "sys",
+                "visibility",
+                "weather",
+                "wind"
+            ],
+            "title": "List"
+        },
+        "Clouds": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "all": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "all"
+            ],
+            "title": "Clouds"
+        },
+        "MainClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "temp": {
+                    "type": "number"
+                },
+                "feels_like": {
+                    "type": "number"
+                },
+                "temp_min": {
+                    "type": "number"
+                },
+                "temp_max": {
+                    "type": "number"
+                },
+                "pressure": {
+                    "type": "integer"
+                },
+                "sea_level": {
+                    "type": "integer"
+                },
+                "grnd_level": {
+                    "type": "integer"
+                },
+                "humidity": {
+                    "type": "integer"
+                },
+                "temp_kf": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "feels_like",
+                "grnd_level",
+                "humidity",
+                "pressure",
+                "sea_level",
+                "temp",
+                "temp_kf",
+                "temp_max",
+                "temp_min"
+            ],
+            "title": "MainClass"
+        },
+        "Rain": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "3h": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "3h"
+            ],
+            "title": "Rain"
+        },
+        "Sys": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "pod": {
+                    "$ref": "#/definitions/Pod"
+                }
+            },
+            "required": [
+                "pod"
+            ],
+            "title": "Sys"
+        },
+        "Weather": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "main": {
+                    "$ref": "#/definitions/MainEnum"
+                },
+                "description": {
+                    "$ref": "#/definitions/Description"
+                },
+                "icon": {
+                    "$ref": "#/definitions/Icon"
+                }
+            },
+            "required": [
+                "description",
+                "icon",
+                "id",
+                "main"
+            ],
+            "title": "Weather"
+        },
+        "Wind": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "speed": {
+                    "type": "number"
+                },
+                "deg": {
+                    "type": "integer"
+                },
+                "gust": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "deg",
+                "gust",
+                "speed"
+            ],
+            "title": "Wind"
+        },
+        "Pod": {
+            "type": "string",
+            "enum": [
+                "d",
+                "n"
+            ],
+            "title": "Pod"
+        },
+        "Description": {
+            "type": "string",
+            "enum": [
+                "light rain",
+                "broken clouds",
+                "overcast clouds"
+            ],
+            "title": "Description"
+        },
+        "Icon": {
+            "type": "string",
+            "enum": [
+                "10d",
+                "04n",
+                "04d",
+                "10n"
+            ],
+            "title": "Icon"
+        },
+        "MainEnum": {
+            "type": "string",
+            "enum": [
+                "Rain",
+                "Clouds"
+            ],
+            "title": "MainEnum"
+        }
+    }
+}
