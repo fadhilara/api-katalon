@@ -53,7 +53,7 @@
       <description></description>
       <id>ee826232-1e6c-4ecf-a510-2a2b6f3ff010</id>
       <masked>false</masked>
-      <name>weather_forecast</name>
+      <name>baseUrlWeatherForecast</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
