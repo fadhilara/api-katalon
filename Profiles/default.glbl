@@ -34,4 +34,9 @@
       <initValue>'http://api.openweathermap.org/data/2.5/air_pollution'</initValue>
       <name>baseUrlPolution</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://api.openweathermap.org/data/2.5/forecast'</initValue>
+      <name>baseUrlWeatherForecast</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

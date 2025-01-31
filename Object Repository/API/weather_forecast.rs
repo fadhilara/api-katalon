@@ -18,7 +18,7 @@
    <migratedVersion>5.4.1</migratedVersion>
    <path></path>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://api.openweathermap.org/data/2.5/forecast?lat=-6.28381815&amp;lon=106.80486324917382&amp;appid=4f03e47b10cdc4d6106fc12db8a0fae3</restUrl>
+   <restUrl>${baseUrlWeatherForecast}?lat=${lat}&amp;lon=${lon}&amp;appid=${appid}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -27,6 +27,34 @@
    <soapServiceFunction></soapServiceFunction>
    <socketTimeout>0</socketTimeout>
    <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
+   <variables>
+      <defaultValue>GlobalVariable.lat</defaultValue>
+      <description></description>
+      <id>f316deda-94e3-4c25-a494-d6b040486b3e</id>
+      <masked>false</masked>
+      <name>lat</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.lon</defaultValue>
+      <description></description>
+      <id>465d5580-0e03-4032-aa44-ad1686cc11a2</id>
+      <masked>false</masked>
+      <name>lon</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.appid</defaultValue>
+      <description></description>
+      <id>0eb9d37a-42e6-4053-8c97-dd3c7bb4bfaf</id>
+      <masked>false</masked>
+      <name>appid</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.baseUrlWeatherForecast</defaultValue>
+      <description></description>
+      <id>ee826232-1e6c-4ecf-a510-2a2b6f3ff010</id>
+      <masked>false</masked>
+      <name>weather_forecast</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject
