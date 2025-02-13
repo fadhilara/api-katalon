@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>api_coordinate</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>77b2a729-0b34-4e68-a9cd-9cdf62e44a6f</testCaseGuid>
+</TestCaseEntity>

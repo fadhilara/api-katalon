@@ -15,8 +15,11 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import groovy.json.JsonSlurper as JsonSluper
 import org.openqa.selenium.Keys as Keys
+import com.kms.katalon.core.testobject.ResponseObject
+import com.kms.katalon.core.webservice.verification.WSResponseManager
+
+ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
 response = WS.sendRequest(findTestObject('API/polution'))
 
@@ -35,4 +38,104 @@ WS.containsString(response, 'pm2_5', false)
 WS.containsString(response, 'pm10', false)
 
 WS.containsString(response, 'nh3', false)
+
+String jsonSchema =
+"""
+{
+  "\$id": "https://example.com/person.schema.json",
+  "\$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "coord": {
+      "type": "object",
+      "properties": {
+        "lon": {
+          "type": "number"
+        },
+        "lat": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "lon",
+        "lat"
+      ]
+    },
+    "list": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "main": {
+              "type": "object",
+              "properties": {
+                "aqi": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "aqi"
+              ]
+            },
+            "components": {
+              "type": "object",
+              "properties": {
+                "co": {
+                  "type": "number"
+                },
+                "no": {
+                  "type": "number"
+                },
+                "no2": {
+                  "type": "number"
+                },
+                "o3": {
+                  "type": "number"
+                },
+                "so2": {
+                  "type": "number"
+                },
+                "pm2_5": {
+                  "type": "number"
+                },
+                "pm10": {
+                  "type": "number"
+                },
+                "nh3": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "co",
+                "no",
+                "no2",
+                "o3",
+                "so2",
+                "pm2_5",
+                "pm10",
+                "nh3"
+              ]
+            },
+            "dt": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "main",
+            "components",
+            "dt"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "coord",
+    "list"
+  ]
+}
+"""
+
+boolean successful = WS.validateJsonAgainstSchema(response,jsonSchema)
 

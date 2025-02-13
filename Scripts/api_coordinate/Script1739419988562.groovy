@@ -15,29 +15,19 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import groovy.json.JsonSlurper as JsonSluper
 import org.openqa.selenium.Keys as Keys
-import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
-import org.json.JSONObject as JSONObject
-import org.json.JSONTokener as JSONTokener
-import org.openqa.selenium.Keys as Keys
-import com.kms.katalon.core.testobject.ResponseObject
+import groovy.json.JsonSlurper as JsonSlurper
 
-response = WS.sendRequest(findTestObject('API/weather_forecast'))
+def jsonSlurper = new JsonSlurper()
+
+response = WS.sendRequest(findTestObject('API/coordinate'))
+
+parsedResponse = jsonSlurper.parseText(response.getResponseBodyContent())
 
 WS.verifyResponseStatusCode(response, 200)
 
-WS.containsString(response, 'temp', false)
+GlobalVariable.lat = parsedResponse.lat
 
-WS.containsString(response, 'pressure', false)
+GlobalVariable.lon = parsedResponse.lon
 
-WS.containsString(response, 'sea_level', false)
-
-WS.containsString(response, 'humidity', false)
-
-WS.containsString(response, 'weather', false)
-
-WS.containsString(response, 'clouds', false)
-
-WS.containsString(response, 'wind', false)
-
-WS.containsString(response, 'rain', false)
